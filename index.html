@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple Crypto</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <main id="container">
+
+        <label for="input">Text:</label>
+        <textarea id="input" name="text" placeholder="Enter your message"></textarea>
+
+        <div class="btnType">
+            <button type="button" id="encrypt">Encrypt</button>
+            <button type="button" id="decrypt">Decrypt</button>
+            <button type="button" id="newKey">New Key</button>
+            <button type="button" id="copy">Copy The Result</button>
+        </div>
+
+        <label for="output">Result:</label>
+        <textarea id="output" name="result" readonly></textarea>
+
+        <p id="status" role="status"></p>
+        <section id="ctf">
+    <h2>Challenge: find the secret</h2>
+    <p>This message was encrypted with a substitution cipher. Decode it and submit the flag.</p>
+
+    <textarea id="ctfCipher" readonly></textarea>
+
+    <input type="text" id="ctfAnswer" placeholder="FLAG{...}" autocomplete="off">
+
+    <div class="btnType">
+        <button type="button" id="ctfSubmit">Submit flag</button>
+        <button type="button" id="ctfHint">Hint</button>
+    </div>
+
+    <p id="ctfResult" role="status"></p>
+</section>
+
+
+    </main>
+
+    <script src="index.js"></script>
+    <script src="ctf.js"></script>
+    <script src="solver.js"></script>
+</body>

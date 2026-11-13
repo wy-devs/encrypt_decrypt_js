@@ -1,0 +1,143 @@
+:root {
+    --border-light: hsl(0, 19%, 83%);
+    --btn-color: hsl(160, 12%, 57%);
+    --btn-hover: hsl(180, 93%, 71%);
+    --btn-active: hsl(0, 19%, 83%);
+   
+    --text: #f1f5f9;
+}
+
+/* ---------- Page with background image ---------- */
+body {
+    margin: 0;
+   min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background-color: hsl(0, 20%, 81%);          /* shown if the image fails to load */
+    background-image: url(cyber_images.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* ---------- Main panel ---------- */
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: min(92%, 700px);
+    margin: 40px auto;
+    padding: 30px 20px;
+    font-family: monospace;
+    font-weight: bold;
+    border-radius: 30px;
+}
+
+#container label {
+    margin-top: 20px;
+    font-size: 1.6rem;
+}
+
+/* ---------- Text areas ---------- */
+#container textarea {
+    width: 100%;
+    min-height: 110px;
+    margin-top: 10px;
+    padding: 12px;
+    font-family: monospace;
+    font-size: 1rem;
+    color: white;
+    background: hsl(0, 4%, 26%);
+    border: none;
+    border-radius: 10px;
+    resize: vertical;
+}
+
+/* ---------- Buttons ---------- */
+.btnType {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.btnType button {
+    padding: 8px 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.3rem;
+    font-weight: bold;
+    background-color: var(--btn-color);
+    border: 2px solid var(--border-light);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+.btnType button:hover {
+    background-color: var(--btn-hover);
+}
+
+.btnType button:active {
+    background-color: var(--btn-active);
+}
+
+.btnType button:focus-visible,
+#container textarea:focus-visible {
+    outline: 3px solid var(--btn-hover);
+    outline-offset: 2px;
+}
+
+/* ---------- Status message ---------- */
+#status {
+    min-height: 1.4em;
+    margin-top: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#ctf {
+    width: 100%;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 2px dashed var(--border-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#ctfCipher {
+    width: 100%;
+    min-height: 140px;
+    margin-top: 10px;
+    padding: 12px;
+    font-family: monospace;
+    font-size: 1rem;
+    color: #0f172a;
+    background: hsl(0, 0%, 96%);
+    border: 2px solid var(--border-light);
+    border-radius: 10px;
+    resize: vertical;
+}
+
+#ctfAnswer {
+    width: 100%;
+    margin-top: 15px;
+    padding: 12px;
+    font-family: monospace;
+    font-size: 1.1rem;
+    border: 2px solid var(--border-light);
+    border-radius: 10px;
+}
+
+#ctfResult {
+    min-height: 1.4em;
+    margin-top: 15px;
+    font-size: 1.2rem;
+}
+
+#ctfResult.success { color: hsl(140, 80%, 60%); }
+#ctfResult.fail    { color: hsl(0, 85%, 70%); }
+#ctfResult.hint    { color: hsl(45, 95%, 65%); }
